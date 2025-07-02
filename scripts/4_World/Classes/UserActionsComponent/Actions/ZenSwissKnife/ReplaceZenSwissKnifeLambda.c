@@ -23,6 +23,10 @@ class ReplaceZenSwissKnifeLambda extends ReplaceItemWithNewLambdaBase
 			return;
 		}
 
+		// Copy persistence 
+		new_item.SetLifetimeMax(old_item.GetLifetimeMax());
+		new_item.SetLifetime(old_item.GetLifetime());
+
 		// We need to retrieve the current tool's health for each individual tool, and transfer them to the 'new' swiss knife item.
 		float baseHP			= -1;
 		float canOpenerHP		= -1;

@@ -158,7 +158,7 @@ class ZenSwissKnife_Scissors extends KitchenKnife
 		data.Write("m_ZenLockpickHealth", m_ZenLockpickHealth);
 		data.Write("m_ZenScissorsHealth", GetHealth01());
 
-		Print("[ZenSwissKnife::MapLink] Saved knife data: " + data.ToJson());
+		Print("[ZenSwissKnife::MapLink] Saved knife data.");
 	}
 	
 	override void OnUApiLoad(UApiEntityStore data)
@@ -174,7 +174,7 @@ class ZenSwissKnife_Scissors extends KitchenKnife
 		m_ZenLockpickHealth		= data.GetFloat("m_ZenLockpickHealth");
 		UpdateSwissToolTexture();
 
-		Print("[ZenSwissKnife::MapLink] Loaded knife data: " + data.ToJson());
+		Print("[ZenSwissKnife::MapLink] Loaded knife data.");
 	}
 	#endif
 }
