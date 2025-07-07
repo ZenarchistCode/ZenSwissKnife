@@ -44,6 +44,9 @@ class ZenSwissKnife_CanOpener extends CanOpener
 	
 	void GetSwissToolHealthOut(out float base, out float canopener, out float screwdriver, out float knife, out float saw, out float lockpick, out float sewing)
 	{
+		if (GetGame().IsClient())
+			return;
+		
 		base				= m_ZenBaseHealth;
 		canopener			= GetHealth01();
 		screwdriver			= m_ZenScrewdriverHealth;
@@ -55,6 +58,9 @@ class ZenSwissKnife_CanOpener extends CanOpener
 
 	void SetSwissToolHealthConvert(float base, float canopener, float screwdriver, float knife, float saw, float lockpick, float sewing)
 	{
+		if (GetGame().IsClient())
+			return;
+		
 		SetHealth01("","", canopener);
 
 		m_ZenBaseHealth			= base;

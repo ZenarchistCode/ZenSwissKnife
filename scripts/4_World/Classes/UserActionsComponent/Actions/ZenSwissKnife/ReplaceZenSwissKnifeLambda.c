@@ -102,6 +102,9 @@ class ReplaceZenSwissKnifeLambda extends ReplaceItemWithNewLambdaBase
 
 	void SetNewToolHealthLevels(EntityAI new_item, float baseHP, float canOpenerHP, float screwdriverHP, float knifeHP, float sawHP, float lockpickHP, float scissorsHP)
 	{
+		if (GetGame().IsClient())
+			return;
+		
 		ZenSwissKnife.DebugMessage("SetTo(" + new_item.GetType() + ") - baseHP=" + baseHP + " canOpenerHP=" + canOpenerHP + " screwdriverHP=" + screwdriverHP + " knifeHP=" + knifeHP + " sawHP=" + sawHP + " lockpickHP=" + lockpickHP + " scissorsHP=" + scissorsHP);
 
 		//! ZenSwissKnife
