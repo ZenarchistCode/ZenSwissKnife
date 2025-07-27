@@ -34,6 +34,16 @@ class ZenSwissKnife extends ToolBase
 		SetHealth(GetMaxHealth());
 	}
 
+	override void DeferredInit()
+	{
+		super.DeferredInit();
+
+		if (GetGame().IsDedicatedServer())
+		{
+			SetHealth01("", "", GetToolHealth01());
+		}
+	}
+
 	protected void RegisterSwissNetSync()
 	{
 		RegisterNetSyncVariableFloat("m_ZenCanOpenerHealth");
