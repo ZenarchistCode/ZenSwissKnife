@@ -14,7 +14,7 @@ class ZenSwissKnife_CanOpener extends CanOpener
 
 	override bool NameOverride(out string output)
 	{
-		output = GetGame().ConfigGetTextOut("CfgVehicles " + GetType() + " displayName") + " (#STR_CfgVehicles_CanOpener0)";
+		output = g_Game.ConfigGetTextOut("CfgVehicles " + GetType() + " displayName") + " (#STR_CfgVehicles_CanOpener0)";
 		return true;
 	}
 
@@ -30,7 +30,7 @@ class ZenSwissKnife_CanOpener extends CanOpener
 	{
 		super.EEHealthLevelChanged(oldLevel, newLevel, zone);
 
-		if (GetGame().IsDedicatedServer())
+		if (g_Game.IsDedicatedServer())
 		{
 			if (newLevel == GameConstants.STATE_RUINED)
 				ZenSwissKnife.ConvertKnife(this);
@@ -44,7 +44,7 @@ class ZenSwissKnife_CanOpener extends CanOpener
 	
 	void GetSwissToolHealthOut(out float base, out float canopener, out float screwdriver, out float knife, out float saw, out float lockpick, out float sewing)
 	{
-		if (GetGame().IsClient())
+		if (g_Game.IsClient())
 			return;
 		
 		base				= m_ZenBaseHealth;
@@ -58,7 +58,7 @@ class ZenSwissKnife_CanOpener extends CanOpener
 
 	void SetSwissToolHealthConvert(float base, float canopener, float screwdriver, float knife, float saw, float lockpick, float sewing)
 	{
-		if (GetGame().IsClient())
+		if (g_Game.IsClient())
 			return;
 		
 		SetHealth01("","", canopener);

@@ -38,7 +38,7 @@ class ZenSwissKnife extends ToolBase
 	{
 		super.DeferredInit();
 
-		if (GetGame().IsDedicatedServer())
+		if (g_Game.IsDedicatedServer())
 		{
 			SetHealth01("", "", GetToolHealth01());
 		}
@@ -70,7 +70,7 @@ class ZenSwissKnife extends ToolBase
 	{
 		super.EEHealthLevelChanged(oldLevel, newLevel, zone);
 
-		if (GetGame().IsDedicatedServer())
+		if (g_Game.IsDedicatedServer())
 		{
 			UpdateSwissToolTexture(this, true);
 			SetSynchDirty();
@@ -79,7 +79,7 @@ class ZenSwissKnife extends ToolBase
 
 	void GetSwissToolHealthOut(out float base, out float canopener, out float screwdriver, out float knife, out float saw, out float lockpick, out float sewing)
 	{
-		if (GetGame().IsClient())
+		if (g_Game.IsClient())
 			return;
 		
 		base				= GetHealth01("","");
@@ -93,7 +93,7 @@ class ZenSwissKnife extends ToolBase
 
 	void SetSwissToolHealthConvert(float base, float canopener, float screwdriver, float knife, float saw, float lockpick, float sewing)
 	{
-		if (GetGame().IsClient())
+		if (g_Game.IsClient())
 			return;
 		
 		m_ZenCanOpenerHealth	= canopener;
