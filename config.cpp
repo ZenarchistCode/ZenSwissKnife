@@ -692,7 +692,6 @@ class CfgVehicles
 	};
 
 	//! SCISSORS 
-	class ZenSwissKnife_Knife;
 	class ZenSwissKnife_Scissors: ZenSwissKnife_Knife
 	{
 		scope = 2;
